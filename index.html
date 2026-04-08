@@ -6,18 +6,18 @@
     <title>QA Team — 4DX Scoreboard</title>
     <style>
         :root {
-            --bg: #0f1923;
-            --card-bg: #1a2733;
-            --card-border: #263545;
-            --text: #e4e8ec;
-            --text-muted: #8899aa;
-            --green: #00c853;
-            --green-glow: rgba(0,200,83,.25);
-            --red: #ff5252;
-            --red-glow: rgba(255,82,82,.25);
-            --yellow: #ffd740;
-            --yellow-glow: rgba(255,215,64,.25);
-            --accent: #40c4ff;
+            --bg: #f0f4f8;
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --text: #2d3748;
+            --text-muted: #718096;
+            --green: #38a169;
+            --green-glow: rgba(56,161,105,.15);
+            --red: #e53e3e;
+            --red-glow: rgba(229,62,62,.12);
+            --yellow: #d69e2e;
+            --yellow-glow: rgba(214,158,46,.12);
+            --accent: #3182ce;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -58,9 +58,9 @@
             border-radius: 20px;
             font-size: .8rem;
             font-weight: 600;
-            background: rgba(64,196,255,.12);
+            background: rgba(49,130,206,.08);
             color: var(--accent);
-            border: 1px solid rgba(64,196,255,.25);
+            border: 1px solid rgba(49,130,206,.2);
         }
 
         .grid {
@@ -83,7 +83,7 @@
 
         .card:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,.3);
+            box-shadow: 0 8px 30px rgba(0,0,0,.08);
         }
 
         .card::before {
@@ -137,7 +137,7 @@
 
         .gauge-ring .ring-bg {
             fill: none;
-            stroke: #263545;
+            stroke: #e2e8f0;
             stroke-width: 8;
         }
 
@@ -186,7 +186,7 @@
             justify-content: space-between;
             align-items: center;
             padding: .45rem 0;
-            border-bottom: 1px solid rgba(255,255,255,.05);
+            border-bottom: 1px solid #edf2f7;
         }
 
         .gauge-row:last-child { border-bottom: none; }
@@ -250,181 +250,7 @@
             50% { opacity: .4; }
         }
 
-        /* WIG Banner */
-        .wig-banner {
-            max-width: 1200px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(135deg, rgba(64,196,255,.08) 0%, rgba(64,196,255,.02) 100%);
-            border: 1px solid rgba(64,196,255,.25);
-            border-radius: 16px;
-            padding: 1.6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
 
-        .wig-banner::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), #7c4dff);
-        }
-
-        .wig-tag {
-            display: inline-block;
-            font-size: .7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent);
-            background: rgba(64,196,255,.12);
-            padding: .25rem .7rem;
-            border-radius: 5px;
-            margin-bottom: .6rem;
-        }
-
-        .wig-text {
-            font-size: 1.15rem;
-            font-weight: 600;
-            line-height: 1.5;
-            color: var(--text);
-        }
-
-        .wig-text em {
-            font-style: normal;
-            color: var(--accent);
-        }
-
-        .wig-deadline {
-            margin-top: .6rem;
-            font-size: .8rem;
-            color: var(--text-muted);
-        }
-
-        .wig-deadline strong {
-            color: var(--yellow);
-            font-weight: 600;
-        }
-
-        /* Section titles */
-        .section-title {
-            max-width: 1200px;
-            margin: 2.5rem auto .8rem;
-            font-size: .75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            padding-left: .2rem;
-        }
-
-        /* Lag measure cards */
-        .lag-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .lag-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.8rem;
-            position: relative;
-            overflow: hidden;
-            transition: transform .2s, box-shadow .2s;
-        }
-
-        .lag-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,.3);
-        }
-
-        .lag-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-        }
-
-        .lag-card.behind::before { background: var(--red); box-shadow: 0 0 20px var(--red-glow); }
-        .lag-card.on-track::before { background: var(--green); box-shadow: 0 0 20px var(--green-glow); }
-        .lag-card.at-risk::before { background: var(--yellow); box-shadow: 0 0 20px var(--yellow-glow); }
-
-        .lag-card .card-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: .6rem; }
-        .lag-card.behind .card-label { color: var(--red); }
-        .lag-card.on-track .card-label { color: var(--green); }
-        .lag-card.at-risk .card-label { color: var(--yellow); }
-
-        .lag-card .card-title { font-size: 1rem; font-weight: 500; line-height: 1.45; color: var(--text); margin-bottom: 1.2rem; }
-
-        .lag-progress-bar {
-            height: 10px;
-            background: #263545;
-            border-radius: 6px;
-            overflow: hidden;
-            margin-bottom: .8rem;
-        }
-
-        .lag-progress-fill {
-            height: 100%;
-            border-radius: 6px;
-            transition: width 1.2s ease;
-            width: 0;
-        }
-
-        .lag-card.behind .lag-progress-fill { background: var(--red); box-shadow: 0 0 10px var(--red-glow); }
-        .lag-card.on-track .lag-progress-fill { background: var(--green); box-shadow: 0 0 10px var(--green-glow); }
-        .lag-card.at-risk .lag-progress-fill { background: var(--yellow); box-shadow: 0 0 10px var(--yellow-glow); }
-
-        .lag-stats {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .lag-stat-group { display: flex; flex-direction: column; gap: .15rem; }
-
-        .lag-stat-label {
-            font-size: .72rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: .5px;
-        }
-
-        .lag-stat-value {
-            font-size: 1.4rem;
-            font-weight: 700;
-        }
-
-        .lag-card.behind .lag-stat-value.highlight { color: var(--red); }
-        .lag-card.on-track .lag-stat-value.highlight { color: var(--green); }
-        .lag-card.at-risk .lag-stat-value.highlight { color: var(--yellow); }
-
-        .lag-stat-value.neutral { color: var(--text-muted); font-size: 1.1rem; }
-
-        .lag-card .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .35rem;
-            font-size: .72rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: .3rem .7rem;
-            border-radius: 6px;
-            margin-top: 1rem;
-        }
-
-        .lag-card.behind .status-badge { background: var(--red-glow); color: var(--red); }
-        .lag-card.on-track .status-badge { background: var(--green-glow); color: var(--green); }
-        .lag-card.at-risk .status-badge { background: var(--yellow-glow); color: var(--yellow); }
-
-        .lag-card.behind .status-dot { background: var(--red); }
-        .lag-card.on-track .status-dot { background: var(--green); }
-        .lag-card.at-risk .status-dot { background: var(--yellow); }
 
         .footer {
             text-align: center;
@@ -452,71 +278,6 @@
     <span class="week-label" id="weekLabel"></span>
 </div>
 
-<!-- WIG -->
-<div class="wig-banner">
-    <div class="wig-tag">WIG — Wildly Important Goal</div>
-    <div class="wig-text">
-        Reduce the average time in QA status by <em>20%</em> — from <em>24 h</em> to <em>19.5 h</em>
-    </div>
-    <div class="wig-deadline">Deadline: <strong>Dec 31, 2026</strong></div>
-</div>
-
-<!-- Lag Measures -->
-<div class="section-title">Lag Measures</div>
-<div class="lag-grid">
-
-    <!-- Lag 1 -->
-    <div class="lag-card behind">
-        <div class="card-label">Lag Measure 1</div>
-        <div class="card-title">Average task time in "QA" status reduced by 20%</div>
-        <div class="lag-progress-bar">
-            <div class="lag-progress-fill" data-width="0"></div>
-        </div>
-        <div class="lag-stats">
-            <div class="lag-stat-group">
-                <span class="lag-stat-label">Current</span>
-                <span class="lag-stat-value highlight">24 h</span>
-            </div>
-            <div class="lag-stat-group" style="text-align:center;">
-                <span class="lag-stat-label">Reduction</span>
-                <span class="lag-stat-value neutral">0%</span>
-            </div>
-            <div class="lag-stat-group" style="text-align:right;">
-                <span class="lag-stat-label">Target</span>
-                <span class="lag-stat-value neutral">19.5 h (−20%)</span>
-            </div>
-        </div>
-        <div class="status-badge"><span class="status-dot"></span> Behind — Expressed in Lead 1</div>
-    </div>
-
-    <!-- Lag 2 -->
-    <div class="lag-card at-risk">
-        <div class="card-label">Lag Measure 2</div>
-        <div class="card-title">Test cases automation ratio ≥ 70%</div>
-        <div class="lag-progress-bar">
-            <div class="lag-progress-fill" data-width="90.16"></div>
-        </div>
-        <div class="lag-stats">
-            <div class="lag-stat-group">
-                <span class="lag-stat-label">Current</span>
-                <span class="lag-stat-value highlight">63.11%</span>
-            </div>
-            <div class="lag-stat-group" style="text-align:center;">
-                <span class="lag-stat-label">Gap</span>
-                <span class="lag-stat-value neutral">−6.89 pp</span>
-            </div>
-            <div class="lag-stat-group" style="text-align:right;">
-                <span class="lag-stat-label">Target</span>
-                <span class="lag-stat-value neutral">≥ 70%</span>
-            </div>
-        </div>
-        <div class="status-badge"><span class="status-dot"></span> At Risk</div>
-    </div>
-
-</div>
-
-<!-- Lead Measures -->
-<div class="section-title">Lead Measures</div>
 <div class="grid">
 
     <!-- Lead Measure 1 -->
@@ -659,13 +420,7 @@
             });
         });
 
-        // Animate lag progress bars
-        document.querySelectorAll('.lag-progress-fill').forEach(bar => {
-            const w = bar.dataset.width;
-            requestAnimationFrame(() => {
-                bar.style.width = w + '%';
-            });
-        });
+
     });
 </script>
 
