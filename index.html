@@ -252,6 +252,81 @@
 
 
 
+        /* Trend arrow */
+        .trend {
+            display: inline-flex;
+            align-items: center;
+            gap: .25rem;
+            font-size: .78rem;
+            font-weight: 600;
+            margin-left: .4rem;
+        }
+
+        .trend.worse { color: var(--red); }
+        .trend.better { color: var(--green); }
+        .trend.same { color: var(--text-muted); }
+
+        /* History table */
+        .history-section {
+            max-width: 1200px;
+            margin: 2.5rem auto 0;
+        }
+
+        .history-title {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: .8rem;
+        }
+
+        .history-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+        }
+
+        .history-table th {
+            background: #edf2f7;
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-muted);
+            padding: .7rem 1rem;
+            text-align: left;
+        }
+
+        .history-table td {
+            padding: .65rem 1rem;
+            font-size: .88rem;
+            border-top: 1px solid #edf2f7;
+        }
+
+        .history-table tr.baseline td {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .history-table tr.current td {
+            font-weight: 600;
+        }
+
+        .history-table .badge {
+            display: inline-block;
+            font-size: .68rem;
+            font-weight: 600;
+            padding: .15rem .5rem;
+            border-radius: 4px;
+        }
+
+        .badge.baseline-badge { background: rgba(49,130,206,.1); color: var(--accent); }
+        .badge.current-badge { background: rgba(56,161,105,.1); color: var(--green); }
+
         .footer {
             text-align: center;
             margin-top: 2.5rem;
@@ -267,6 +342,7 @@
             .header h1 { font-size: 1.4rem; }
             .gauge-wrapper { flex-direction: column; text-align: center; }
             .gauge-details { width: 100%; }
+            .history-table { font-size: .8rem; }
         }
     </style>
 </head>
@@ -291,18 +367,22 @@
                     <circle class="ring-fill" cx="60" cy="60" r="50"
                         stroke-dasharray="314.16"
                         stroke-dashoffset="314.16"
-                        data-percent="81">
+                        data-percent="33">
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">81%</div>
+                    <div class="gauge-percent">33%</div>
                     <div class="gauge-percent-label">of target</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">24 h</span>
+                    <span class="gauge-row-value current">60 h <span class="trend worse">▲ +36 h</span></span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Baseline (Apr 6)</span>
+                    <span class="gauge-row-value current" style="color:var(--text-muted)">24 h</span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Target</span>
@@ -310,7 +390,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">+4.5 h</span>
+                    <span class="gauge-row-value gap">+40.5 h</span>
                 </div>
             </div>
         </div>
@@ -328,18 +408,22 @@
                     <circle class="ring-fill" cx="60" cy="60" r="50"
                         stroke-dasharray="314.16"
                         stroke-dashoffset="314.16"
-                        data-percent="82">
+                        data-percent="56">
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">82%</div>
+                    <div class="gauge-percent">56%</div>
                     <div class="gauge-percent-label">of target</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">5.5 d</span>
+                    <span class="gauge-row-value current">8 d <span class="trend worse">▲ +2.5 d</span></span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Baseline (Apr 6)</span>
+                    <span class="gauge-row-value current" style="color:var(--text-muted)">5.5 d</span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Target</span>
@@ -347,7 +431,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">+1.0 d</span>
+                    <span class="gauge-row-value gap">+3.5 d</span>
                 </div>
             </div>
         </div>
@@ -369,14 +453,18 @@
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">927</div>
+                    <div class="gauge-percent">947</div>
                     <div class="gauge-percent-label">total tc</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Total Cases</span>
-                    <span class="gauge-row-value current">927</span>
+                    <span class="gauge-row-value current">947 <span class="trend better">▲ +20</span></span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Baseline (Apr 6)</span>
+                    <span class="gauge-row-value current" style="color:var(--text-muted)">927</span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Monthly Target</span>
@@ -384,13 +472,42 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Weekly Pace</span>
-                    <span class="gauge-row-value gap">~7–8 tc</span>
+                    <span class="gauge-row-value gap">+20 this week</span>
                 </div>
             </div>
         </div>
         <div class="status-badge"><span class="status-dot"></span> On Track</div>
     </div>
 
+</div>
+
+<!-- Weekly History -->
+<div class="history-section">
+    <div class="history-title">Weekly History</div>
+    <table class="history-table">
+        <thead>
+            <tr>
+                <th>Week</th>
+                <th>Lead 1 (QA → Any)</th>
+                <th>Lead 2 (Ready → QA)</th>
+                <th>Lead 3 (Auto TC)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="baseline">
+                <td>Apr 6, 2026 <span class="badge baseline-badge">Baseline</span></td>
+                <td>24 h</td>
+                <td>5.5 d</td>
+                <td>927</td>
+            </tr>
+            <tr class="current">
+                <td>Apr 13, 2026 <span class="badge current-badge">Current</span></td>
+                <td style="color:var(--red)">60 h</td>
+                <td style="color:var(--red)">8 d</td>
+                <td style="color:var(--green)">947 (+20)</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <div class="footer">
@@ -400,13 +517,12 @@
 <script>
     // Week label
     (function () {
-        const now = new Date();
+        const now = new Date(2026, 3, 13); // Apr 13, 2026
         const startOfYear = new Date(now.getFullYear(), 0, 1);
         const weekNum = Math.ceil(((now - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
         document.getElementById('weekLabel').textContent =
-            'Week ' + weekNum + ' · ' + now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
-        document.getElementById('updatedDate').textContent =
-            now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+            'Week ' + weekNum + ' · April 13, 2026';
+        document.getElementById('updatedDate').textContent = 'Apr 13, 2026';
     })();
 
     // Animate gauge rings on load
