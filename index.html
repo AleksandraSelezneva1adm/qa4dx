@@ -378,7 +378,7 @@
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">8 h <span class="trend worse">▲ +2.5 h</span></span>
+                    <span class="gauge-row-value current">6 h <span class="trend better">▼ -2 h</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -390,7 +390,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">-2 h (under target)</span>
+                    <span class="gauge-row-value gap">-4 h (under target)</span>
                 </div>
             </div>
         </div>
@@ -408,18 +408,18 @@
                     <circle class="ring-fill" cx="60" cy="60" r="50"
                         stroke-dasharray="314.16"
                         stroke-dashoffset="314.16"
-                        data-percent="41">
+                        data-percent="40">
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">41%</div>
+                    <div class="gauge-percent">40%</div>
                     <div class="gauge-percent-label">of target</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">1d 19h <span class="trend better">▼ -8h</span></span>
+                    <span class="gauge-row-value current">1d 20h <span class="trend worse">▲ +1h</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -431,7 +431,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">+25.5h</span>
+                    <span class="gauge-row-value gap">+26.5h</span>
                 </div>
             </div>
         </div>
@@ -453,14 +453,14 @@
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">678</div>
+                    <div class="gauge-percent">688</div>
                     <div class="gauge-percent-label">total tc</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Total Cases</span>
-                    <span class="gauge-row-value current">678 <span class="trend better">▲ +20</span></span>
+                    <span class="gauge-row-value current">688 <span class="trend better">▲ +10</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -472,7 +472,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Weekly Pace</span>
-                    <span class="gauge-row-value gap">+20 this week</span>
+                    <span class="gauge-row-value gap">+10 this week</span>
                 </div>
             </div>
         </div>
@@ -518,11 +518,17 @@
                 <td style="color:var(--red)">2d 3h</td>
                 <td style="color:var(--green)">658 (+27)</td>
             </tr>
-            <tr class="current">
-                <td>Apr 27 – May 3, 2026 <span class="badge current-badge">Current</span></td>
+            <tr>
+                <td>Apr 27 – May 3, 2026</td>
                 <td style="color:var(--green)">8h</td>
                 <td style="color:var(--red)">1d 19h</td>
                 <td style="color:var(--green)">678 (+20)</td>
+            </tr>
+            <tr class="current">
+                <td>May 4–10, 2026 <span class="badge current-badge">Current</span></td>
+                <td style="color:var(--green)">6h</td>
+                <td style="color:var(--red)">1d 20h</td>
+                <td style="color:var(--green)">688 (+10)</td>
             </tr>
         </tbody>
     </table>
@@ -535,12 +541,12 @@
 <script>
     // Week label
     (function () {
-        const now = new Date(2026, 4, 3); // May 3, 2026
+        const now = new Date(2026, 4, 10); // May 10, 2026
         const startOfYear = new Date(now.getFullYear(), 0, 1);
         const weekNum = Math.ceil(((now - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
         document.getElementById('weekLabel').textContent =
-            'Week ' + weekNum + ' · Apr 27 – May 3, 2026';
-        document.getElementById('updatedDate').textContent = 'May 3, 2026';
+            'Week ' + weekNum + ' · May 4 – May 10, 2026';
+        document.getElementById('updatedDate').textContent = 'May 10, 2026';
     })();
 
     // Animate gauge rings on load
