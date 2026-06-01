@@ -336,6 +336,91 @@
 
         .footer span { color: var(--accent); font-weight: 600; }
 
+        /* WIG section */
+        .wig-section {
+            max-width: 1200px;
+            margin: 0 auto 1.5rem;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .wig-section .wig-label {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: .4rem;
+        }
+
+        .wig-section .wig-text {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text);
+            line-height: 1.5;
+        }
+
+        /* Lag Measure section */
+        .lag-section {
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+
+        .lag-section .section-label {
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: .8rem;
+        }
+
+        .lag-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 1.8rem;
+            position: relative;
+            overflow: hidden;
+            max-width: 460px;
+        }
+
+        .lag-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--yellow);
+            box-shadow: 0 0 20px var(--yellow-glow);
+        }
+
+        .lag-card .card-label {
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--yellow);
+            margin-bottom: .6rem;
+        }
+
+        .lag-card .card-title {
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--text);
+            margin-bottom: 1.4rem;
+        }
+
+        .lag-card .gauge-percent { color: var(--yellow); }
+        .lag-card .ring-fill { stroke: var(--yellow); filter: drop-shadow(0 0 6px var(--yellow-glow)); }
+        .lag-card .gauge-row-value.target { color: var(--yellow); }
+        .lag-card .gauge-row-value.gap { background: var(--yellow-glow); color: var(--yellow); }
+        .lag-card .status-badge { background: var(--yellow-glow); color: var(--yellow); }
+        .lag-card .status-dot { background: var(--yellow); animation: pulse 2s infinite; }
+
         /* Responsive */
         @media (max-width: 600px) {
             body { padding: 1rem; }
@@ -343,6 +428,8 @@
             .gauge-wrapper { flex-direction: column; text-align: center; }
             .gauge-details { width: 100%; }
             .history-table { font-size: .8rem; }
+            .wig-section { padding: 1rem 1.2rem; }
+            .lag-card { max-width: 100%; }
         }
     </style>
 </head>
@@ -354,6 +441,57 @@
     <span class="week-label" id="weekLabel"></span>
 </div>
 
+<!-- WIG -->
+<div class="wig-section">
+    <div class="wig-label">WIG — Wildly Important Goal</div>
+    <div class="wig-text">Reduce the average time in QA status by 20% from 17.5 h to 14 h by Dec 31, 2026</div>
+</div>
+
+<!-- Lag Measure -->
+<div class="lag-section">
+    <div class="section-label">Lag Measure</div>
+    <div class="lag-card">
+        <div class="card-label">Lag Measure</div>
+        <div class="card-title">Average task time in "QA" status reduced by 20%</div>
+        <div class="gauge-wrapper">
+            <div class="gauge-ring">
+                <svg viewBox="0 0 120 120" width="110" height="110">
+                    <circle class="ring-bg" cx="60" cy="60" r="50"></circle>
+                    <circle class="ring-fill" cx="60" cy="60" r="50"
+                        stroke-dasharray="314.16"
+                        stroke-dashoffset="314.16"
+                        data-percent="71">
+                    </circle>
+                </svg>
+                <div class="gauge-center">
+                    <div class="gauge-percent">71%</div>
+                    <div class="gauge-percent-label">achieved</div>
+                </div>
+            </div>
+            <div class="gauge-details">
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Current</span>
+                    <span class="gauge-row-value current">15 h</span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Baseline</span>
+                    <span class="gauge-row-value current" style="color:var(--text-muted)">17.5 h</span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Target (−20%)</span>
+                    <span class="gauge-row-value target">14 h</span>
+                </div>
+                <div class="gauge-row">
+                    <span class="gauge-row-label">Remaining</span>
+                    <span class="gauge-row-value gap">−1 h to go</span>
+                </div>
+            </div>
+        </div>
+        <div class="status-badge"><span class="status-dot"></span> In Progress</div>
+    </div>
+</div>
+
+<!-- Lead Measures -->
 <div class="grid">
 
     <!-- Lead Measure 1 -->
