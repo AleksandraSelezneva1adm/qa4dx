@@ -404,7 +404,7 @@
 <div class="grid">
 
     <!-- Lag Measure -->
-    <div class="card in-progress" id="cardLag">
+    <div class="card on-track" id="cardLag">
         <div class="card-label">Lag Measure</div>
         <div class="card-title">Average task time in "QA" status reduced by 20%</div>
         <div class="gauge-wrapper">
@@ -414,18 +414,18 @@
                     <circle class="ring-fill" cx="60" cy="60" r="50"
                         stroke-dasharray="314.16"
                         stroke-dashoffset="314.16"
-                        data-percent="71">
+                        data-percent="100">
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">71%</div>
+                    <div class="gauge-percent">100%</div>
                     <div class="gauge-percent-label">progress</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Achieved</span>
-                    <span class="gauge-row-value current">−14.3%</span>
+                    <span class="gauge-row-value current">−62.9%</span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Target</span>
@@ -433,15 +433,15 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Remaining</span>
-                    <span class="gauge-row-value gap">−5.7% to go</span>
+                    <span class="gauge-row-value gap">✓ Exceeded</span>
                 </div>
             </div>
         </div>
-        <div class="status-badge"><span class="status-dot"></span> In Progress</div>
+        <div class="status-badge"><span class="status-dot"></span> On Track</div>
     </div>
 
     <!-- Lead Measure 1 -->
-    <div class="card behind" id="card1">
+    <div class="card on-track" id="card1">
         <div class="card-label">Lead Measure 1</div>
         <div class="card-title">"QA" → Any status transition time ≤ 14h</div>
         <div class="gauge-wrapper">
@@ -451,18 +451,18 @@
                     <circle class="ring-fill" cx="60" cy="60" r="50"
                         stroke-dasharray="314.16"
                         stroke-dashoffset="314.16"
-                        data-percent="71">
+                        data-percent="100">
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">71%</div>
+                    <div class="gauge-percent">100%</div>
                     <div class="gauge-percent-label">progress</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">15 h <span class="trend worse">▲ +8.5 h</span></span>
+                    <span class="gauge-row-value current">6.5 h <span class="trend better">▼ −8.5 h</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -474,11 +474,11 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">+1 h</span>
+                    <span class="gauge-row-value gap">−7.5 h under</span>
                 </div>
             </div>
         </div>
-        <div class="status-badge"><span class="status-dot"></span> Behind Target</div>
+        <div class="status-badge"><span class="status-dot"></span> On Track</div>
     </div>
 
     <!-- Lead Measure 2 -->
@@ -503,7 +503,7 @@
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Current</span>
-                    <span class="gauge-row-value current">1d 19h <span class="trend better">▼ -3h</span></span>
+                    <span class="gauge-row-value current">1d 21h <span class="trend worse">▲ +2h</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -515,7 +515,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Gap</span>
-                    <span class="gauge-row-value gap">+14h</span>
+                    <span class="gauge-row-value gap">+16h</span>
                 </div>
             </div>
         </div>
@@ -537,14 +537,14 @@
                     </circle>
                 </svg>
                 <div class="gauge-center">
-                    <div class="gauge-percent">735</div>
+                    <div class="gauge-percent">752</div>
                     <div class="gauge-percent-label">total tc</div>
                 </div>
             </div>
             <div class="gauge-details">
                 <div class="gauge-row">
                     <span class="gauge-row-label">Total Cases</span>
-                    <span class="gauge-row-value current">735 <span class="trend better">▲ +13</span></span>
+                    <span class="gauge-row-value current">752 <span class="trend better">▲ +17</span></span>
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Baseline (Apr 6)</span>
@@ -556,7 +556,7 @@
                 </div>
                 <div class="gauge-row">
                     <span class="gauge-row-label">Weekly Pace</span>
-                    <span class="gauge-row-value gap">+13 this week</span>
+                    <span class="gauge-row-value gap">+17 this week</span>
                 </div>
             </div>
         </div>
@@ -635,11 +635,18 @@
                 <td style="color:var(--green)">722 (+19)</td>
                 <td style="color:var(--accent);font-weight:600">23</td>
             </tr>
-            <tr class="current">
-                <td>May 25–31, 2026 <span class="badge current-badge">Current</span></td>
+            <tr>
+                <td>May 25–31, 2026</td>
                 <td style="color:var(--red)">15h</td>
                 <td style="color:var(--red)">1d 19h</td>
                 <td style="color:var(--green)">735 (+13)</td>
+                <td style="color:var(--accent);font-weight:600">101</td>
+            </tr>
+            <tr class="current">
+                <td>Jun 1–7, 2026 <span class="badge current-badge">Current</span></td>
+                <td style="color:var(--green)">6.5h</td>
+                <td style="color:var(--red)">1d 21h</td>
+                <td style="color:var(--green)">752 (+17)</td>
                 <td style="color:var(--accent);font-weight:600">101</td>
             </tr>
         </tbody>
@@ -653,12 +660,12 @@
 <script>
     // Week label
     (function () {
-        const now = new Date(2026, 4, 31); // May 31, 2026
+        const now = new Date(2026, 5, 7); // Jun 7, 2026
         const startOfYear = new Date(now.getFullYear(), 0, 1);
         const weekNum = Math.ceil(((now - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7);
         document.getElementById('weekLabel').textContent =
-            'Week ' + weekNum + ' · May 25 – May 31, 2026';
-        document.getElementById('updatedDate').textContent = 'May 31, 2026';
+            'Week ' + weekNum + ' · Jun 1 – Jun 7, 2026';
+        document.getElementById('updatedDate').textContent = 'Jun 8, 2026';
     })();
 
     // Animate gauge rings on load
